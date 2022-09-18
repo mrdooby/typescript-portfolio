@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { Container, Grid } from "@mui/material";
 
@@ -41,7 +41,7 @@ const NavbarContainer = styled.div`
   width: 100%;
   height: 5em;
 `;
-function Navbar() {
+function Navbar(): ReactElement {
   return (
     <NavbarContainer>
       <Container maxWidth="lg" sx={{ height: "100%", backgroundColor: "gray" }}>
