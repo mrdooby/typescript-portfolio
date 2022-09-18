@@ -1,51 +1,64 @@
 import React from "react";
-import styled from "styled-components";
-import { ImageList, ImageListItem } from "@mui/material";
+import styled, { keyframes } from "styled-components";
+import { Grid } from "@mui/material";
 import images from "./assets/index";
 
 // styled components
+const fadeInAnimation = keyframes`
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+`;
+
 const HomeContainer = styled.div`
   display: flex;
   height: calc(100vh - 5em);
   width: 100%;
-  background-color: yellow;
   flex-direction: column;
 `;
 
-function srcset(image: any, size: any, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
+const PetImg = styled.img`
+  display: flex;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  animation: ${fadeInAnimation} ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+`;
+
+const Message = styled.div`
+  position: absolute;
+  color: white;
+  font-size: 7em;
+  bottom: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-left: 10px;
+  text-shadow: 0 0 5px #000;
+`;
 
 function Home() {
   return (
     <HomeContainer>
-      <ImageList
-        sx={{ width: "100%", height: "100%", overflow: "hidden" }}
-        variant="quilted"
-        cols={4}
-        rowHeight={300}
-        gap={0}
+      <Grid
+        container
+        spacing={0}
+        height="100%"
+        overflow="hidden"
+        border="solid black"
       >
         {images.map((item: any) => (
-          <ImageListItem
-            key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
-            <img
-              {...srcset(item, 121, item.rows, item.cols)}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
+          <Grid container item md={3} height="25%">
+            <PetImg src={item} alt="pet photos" loading="lazy" />
+          </Grid>
         ))}
-      </ImageList>
-      <div>hello nice to meet you</div>
+      </Grid>
+      <Message>hello nice to meet you!</Message>
     </HomeContainer>
   );
 }
