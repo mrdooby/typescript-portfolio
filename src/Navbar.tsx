@@ -1,6 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import styled from "styled-components";
 import { Container, Grid } from "@mui/material";
+import Drawer from "./Drawer";
 
 // styled components
 const NameBox = styled.div`
@@ -41,7 +42,15 @@ const NavbarContainer = styled.div`
   width: 100%;
   height: 5em;
 `;
+
+// interface IDrawerVariables {
+//   view: string;
+//   drawerState: boolean;
+// }
+
 function Navbar(): ReactElement {
+  const [view, setView] = useState("");
+
   return (
     <NavbarContainer>
       <Container maxWidth="lg" sx={{ height: "100%", backgroundColor: "gray" }}>
@@ -66,9 +75,27 @@ function Navbar(): ReactElement {
             justifyContent="space-around"
             alignContent="center"
           >
-            <Header>about</Header>
-            <Header>projects</Header>
-            <Header>contact</Header>
+            <Header
+              onMouseEnter={() => {
+                setView("about");
+              }}
+            >
+              about
+            </Header>
+            <Header
+              onMouseEnter={() => {
+                setView("projects");
+              }}
+            >
+              projects
+            </Header>
+            <Header
+              onMouseEnter={() => {
+                setView("contact");
+              }}
+            >
+              contact
+            </Header>
           </Grid>
           <Grid
             container
@@ -82,6 +109,7 @@ function Navbar(): ReactElement {
           </Grid>
         </Grid>
       </Container>
+      <Drawer view={view} setView={setView} />
     </NavbarContainer>
   );
 }
