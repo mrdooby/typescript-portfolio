@@ -52,7 +52,11 @@ function Navbar(): ReactElement {
   const [view, setView] = useState("");
 
   return (
-    <NavbarContainer>
+    <NavbarContainer
+      onMouseLeave={() => {
+        setView("");
+      }}
+    >
       <Container maxWidth="lg" sx={{ height: "100%", backgroundColor: "gray" }}>
         <Grid container width="100%" height="100%">
           <Grid
@@ -109,7 +113,7 @@ function Navbar(): ReactElement {
           </Grid>
         </Grid>
       </Container>
-      <Drawer view={view} setView={setView} />
+      <Drawer view={view} />
     </NavbarContainer>
   );
 }

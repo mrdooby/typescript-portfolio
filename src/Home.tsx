@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Grid } from "@mui/material";
-import images from "./assets/index";
+import images from "./assets/homeAssets";
 
 // styled components
 const fadeInAnimation = keyframes`

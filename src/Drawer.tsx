@@ -1,14 +1,25 @@
-import React, { Suspense, useState } from "react";
-import styled from "styled-components";
+import React, { Suspense } from "react";
+import styled, { keyframes } from "styled-components";
 import { Container, Grid } from "@mui/material";
 
 // styled components
+
+const DrawerTransition = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 const DrawerContainer = styled.div`
   position: absolute;
   background-color: blue;
   width: 100%;
   height: 8em;
   z-index: 5;
+  animation: ${DrawerTransition} 0.3s linear;
 `;
 
 const DescriptionBox = styled.div`
@@ -35,10 +46,9 @@ const Links = styled.div`
 
 interface DrawerProps {
   view: string;
-  setView: Function;
 }
 
-function Drawer({ view, setView }: DrawerProps) {
+function Drawer({ view }: DrawerProps) {
   function renderView() {
     switch (view) {
       case "about":
