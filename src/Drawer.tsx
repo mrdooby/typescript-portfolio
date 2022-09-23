@@ -5,12 +5,12 @@ import { Container, Grid } from "@mui/material";
 // styled components
 
 const DrawerTransition = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+0% {
+opacity: 0
+}
+to {
+opacity: 1
+}
 `;
 
 const DrawerContainer = styled.div`
@@ -20,16 +20,15 @@ const DrawerContainer = styled.div`
   height: 8em;
   z-index: 5;
   animation: ${DrawerTransition} 0.3s linear;
+  box-shadow: 0 0 3px;
 `;
 
 const DescriptionBox = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
-  border-top: solid transparent;
   :hover {
     color: blue;
-    border-top: solid pink;
   }
 `;
 
@@ -37,10 +36,8 @@ const Links = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
-  border-top: solid transparent;
   :hover {
     color: blue;
-    border-top: solid pink;
   }
 `;
 
@@ -59,13 +56,7 @@ function Drawer({ view }: DrawerProps) {
               sx={{ height: "100%", backgroundColor: "gray" }}
             >
               <Grid container width="100%" height="100%">
-                <Grid
-                  container
-                  item
-                  border="solid black"
-                  md={3}
-                  alignContent="center"
-                >
+                <Grid container item md={3} alignContent="center">
                   <DescriptionBox>
                     <span>Get to know me</span>
                   </DescriptionBox>
@@ -73,7 +64,6 @@ function Drawer({ view }: DrawerProps) {
                 <Grid
                   container
                   item
-                  border="solid blue"
                   md={6}
                   direction="row"
                   justifyContent="space-around"
@@ -93,13 +83,7 @@ function Drawer({ view }: DrawerProps) {
               sx={{ height: "100%", backgroundColor: "gray" }}
             >
               <Grid container width="100%" height="100%">
-                <Grid
-                  container
-                  item
-                  border="solid black"
-                  md={3}
-                  alignContent="center"
-                >
+                <Grid container item md={3} alignContent="center">
                   <DescriptionBox>
                     <span>Some of my projects</span>
                   </DescriptionBox>
@@ -107,7 +91,6 @@ function Drawer({ view }: DrawerProps) {
                 <Grid
                   container
                   item
-                  border="solid blue"
                   md={6}
                   direction="row"
                   justifyContent="space-around"
@@ -129,13 +112,7 @@ function Drawer({ view }: DrawerProps) {
               sx={{ height: "100%", backgroundColor: "gray" }}
             >
               <Grid container width="100%" height="100%">
-                <Grid
-                  container
-                  item
-                  border="solid black"
-                  md={3}
-                  alignContent="center"
-                >
+                <Grid container item md={3} alignContent="center">
                   <DescriptionBox>
                     <span>Contact me</span>
                   </DescriptionBox>
@@ -143,7 +120,6 @@ function Drawer({ view }: DrawerProps) {
                 <Grid
                   container
                   item
-                  border="solid blue"
                   md={6}
                   direction="row"
                   justifyContent="space-around"

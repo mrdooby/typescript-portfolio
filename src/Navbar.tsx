@@ -41,6 +41,9 @@ const NavbarContainer = styled.div`
   background-color: blue;
   width: 100%;
   height: 5em;
+  box-shadow: 0 0 3px black;
+  position: fixed;
+  z-index: 100;
 `;
 
 // interface IDrawerVariables {
@@ -59,13 +62,7 @@ function Navbar(): ReactElement {
     >
       <Container maxWidth="lg" sx={{ height: "100%", backgroundColor: "gray" }}>
         <Grid container width="100%" height="100%">
-          <Grid
-            container
-            item
-            border="solid black"
-            md={3}
-            alignContent="center"
-          >
+          <Grid container item md={3} alignContent="center">
             <NameBox>
               <span>clayton chin</span>
             </NameBox>
@@ -73,7 +70,6 @@ function Navbar(): ReactElement {
           <Grid
             container
             item
-            border="solid blue"
             md={6}
             direction="row"
             justifyContent="space-around"
@@ -104,7 +100,6 @@ function Navbar(): ReactElement {
           <Grid
             container
             item
-            border="solid green"
             md={3}
             justifyContent="flex-end"
             alignContent="center"

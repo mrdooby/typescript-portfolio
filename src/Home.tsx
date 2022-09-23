@@ -18,6 +18,8 @@ const HomeContainer = styled.div`
   height: calc(100vh - 5em);
   width: 100%;
   flex-direction: column;
+  box-shadow: 0 0 3px black;
+  padding-top: 5em;
 `;
 
 const PetImg = styled.img`
@@ -45,13 +47,7 @@ const Message = styled.div`
 function Home() {
   return (
     <HomeContainer>
-      <Grid
-        container
-        spacing={0}
-        height="100%"
-        overflow="hidden"
-        border="solid black"
-      >
+      <Grid container spacing={0} height="100%" overflow="hidden">
         {images.map((item: any) => (
           <Grid container item md={3} height="25%">
             <PetImg src={item} alt="pet photos" loading="lazy" />

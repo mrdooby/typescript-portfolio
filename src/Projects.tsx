@@ -4,65 +4,33 @@ import styled from "styled-components";
 import images from "./assets/projectsAssets";
 
 // styled components
-const FECImg = styled.img`
+const Img = styled.img`
   display: flex;
   object-fit: contain;
   width: 80%;
   box-shadow: 0 0 3px black;
 `;
 
-const FECText = styled.div`
+const Text = styled.div`
   display: flex;
   position: relative;
   box-shadow: 0 0 3px black;
   width: 80%;
   background-color: white;
-  padding: 5px;
+  padding: 10px;
 `;
 
-const FECTech = styled.div`
+const Tech = styled.div`
   display: flex;
-  padding-top: 5px;
-  padding-bottom: 5px;
-`;
-
-const SDCImg = styled.img`
-  display: flex;
-  object-fit: contain;
-  width: 80%;
-  float: right;
-  box-shadow: 0 0 3px black;
-`;
-
-const SDCText = styled.div`
-  display: flex;
-  position: relative;
-  box-shadow: 0 0 3px black;
-  width: 80%;
-  background-color: white;
-  padding: 5px;
-`;
-
-const SDCTech = styled.div`
-  position: relative;
-  bottom: 0;
   padding-top: 5px;
   padding-bottom: 5px;
 `;
 
 const VSImg = styled.img`
-  object-fit: contain;
-  height: 80vh;
-  box-shadow: 0 0 3px black;
-`;
-
-const VSText = styled.div`
   display: flex;
-  position: relative;
-  box-shadow: 0 0 3px black;
+  object-fit: contain;
   width: 80%;
-  background-color: white;
-  padding: 5px;
+  box-shadow: 0 0 3px black;
 `;
 
 const VSTech = styled.div`
@@ -86,7 +54,7 @@ function Projects() {
               right: 0,
             }}
           >
-            <FECImg src={images[0].image} alt={images[0].title} />
+            <Img src={images[0].image} alt={images[0].title} />
             <Box
               sx={{
                 // border: "solid green",
@@ -96,7 +64,7 @@ function Projects() {
                 height: "auto",
               }}
             >
-              <FECTech>{images[0].tech}</FECTech>
+              <Tech>{images[0].tech}</Tech>
             </Box>
             <Box
               sx={{
@@ -111,7 +79,7 @@ function Projects() {
                 bottom: "0",
               }}
             >
-              <FECText>{images[0].description}</FECText>
+              <Text>{images[0].description}</Text>
             </Box>
           </Box>
         </Grid>
@@ -127,7 +95,7 @@ function Projects() {
               alignItems: "flex-end",
             }}
           >
-            <SDCImg src={images[1].image} alt={images[1].title} />
+            <Img src={images[1].image} alt={images[1].title} />
             <Box
               sx={{
                 display: "flex",
@@ -137,7 +105,7 @@ function Projects() {
                 right: 0,
               }}
             >
-              <SDCTech>{images[1].tech}</SDCTech>
+              <Tech>{images[1].tech}</Tech>
             </Box>
             <Box
               sx={{
@@ -152,7 +120,7 @@ function Projects() {
                 bottom: "0",
               }}
             >
-              <SDCText>{images[1].description}</SDCText>
+              <Text>{images[1].description}</Text>
             </Box>
           </Box>
         </Grid>
@@ -192,7 +160,7 @@ function Projects() {
                 top: "10%",
               }}
             >
-              <VSText>{images[2].description}</VSText>
+              <Text>{images[2].description}</Text>
               <VSTech>{images[2].tech}</VSTech>
             </Box>
           </Box>
